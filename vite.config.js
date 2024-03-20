@@ -1,6 +1,8 @@
-import {defineConfig} from 'vite'
-
+import { defineConfig } from "vite";
 
 export default defineConfig({
-	plugins: []	
-})
+  env: {
+    API_URL: import.meta.env.OPENAI_API,
+  },
+  plugins: [],
+});
