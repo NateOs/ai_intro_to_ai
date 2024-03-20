@@ -1,20 +1,22 @@
-import OpenAI from 'openai'
+import "dotenv/config";
+import OpenAI from "openai";
 
-console.log(import.meta.env.OPENAI_API);
-const openai = new OpenAI({ apiKey: import.meta.env.OPENAI_API });
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_API });
 
 async function main() {
   const completion = await openai.chat.completions.create({
     messages: [
-      { role: "system", content: "You are a helpful assistant." },
-      { role: "user", content: "Who won the world series in 2020?" },
       {
-        role: "assistant",
-        content: "The Los Angeles Dodgers won the World Series in 2020.",
+        role: "system",
+        content:
+          "You are a rap genius. When given a topic, create a five-line rap about that topic.",
       },
-      { role: "user", content: "Where was it played?" },
+      {
+        role: "user",
+        content: "Television",
+      },
     ],
-    model: "gpt-3.5-turbo",
+    model: "gpt-4-0125-preview",
   });
 
   console.log(completion.choices[0]);

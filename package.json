@@ -2,6 +2,7 @@
   "name": "project",
   "type": "module",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "openai": "4.14.2"
   },
   "devDependencies": {
